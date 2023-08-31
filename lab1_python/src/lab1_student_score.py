@@ -14,7 +14,7 @@ import unittest
 import numpy.testing as npt
 import numpy as np
 import os
-import cv2 as cv
+#import cv2 as cv
 
 from lab1_review import find_warning, every_third, all_words, half_upper_case
 from lab1_review import c_to_f, exp_div_fun, lcm, cond_cum_sum, divide_numbers
@@ -172,5 +172,5 @@ if __name__=='__main__':
     # Do unit testing on lab 1
     unittest.main(exit=False)  # Do not exit to keep displaying images
 
-    cv.waitKey()              # Press a key to quit
-    cv.destroyAllWindows()
+    #cv.waitKey()              # Press a key to quit
+    #cv.destroyAllWindows()

@@ -30,20 +30,29 @@ def find_warning(message: str) -> str:
     If there is no "warning" substring, returns -1
     Hint: don't forget to use a "return" statement
     '''
-    pass
+    
+    return message.lower.find("warning")
 
 def every_third(message: str) -> str:
     '''
     Returns every third letter in message starting with the second letter
     '''
-    pass
+    new_message = ""
+    count = 0
+    for c in message:
+        if count == 2:
+            new_message+=c
+            count = 0
+        count+=1
+    return new_message
 
 def all_words(message: str) -> str:
     '''
     Breaks message up at each space (" ") and puts the substrings into a list in the same order
     (Don't worry about punctuation)
     '''
-    pass
+    return message.split()[]
+    
     
 def half_upper_case(message: str) -> str:
     '''
@@ -51,7 +60,10 @@ def half_upper_case(message: str) -> str:
         of the letters are upper case and the rest lower case.  
         If there are an odd number of letters, round down, that is the first half will have one fewer letters
     '''
-    pass
+    message_new = message
+    message_new[0,int(len(message)/2)-1].upper
+    message_new[int(len(message)/2), len(message)-1].lower
+    return message_new
 
 #############################
 # Chapter 5: Numbers and Math
@@ -69,7 +81,7 @@ def exp_div_fun(a: int, b: int, c: int) -> int:
     '''
     Return the integer remainder you get when you multiply a times itself b times and then divide by c
     '''
-    pass
+    return int(a**b / c)
     
  
  #################################
@@ -94,7 +106,11 @@ def cond_cum_sum(a: int, b: int) -> int:
     Find the cumulative sum of numbers from 0 to a-1 that are not divisible by b
     Hint: % will be useful
     '''
-    pass
+    cnt = 0
+    for num in range(0, a-1):
+        if num % b == 0:
+            cnt+= 1
+    return cnt
 
 def divide_numbers(a: float, b: float) -> float:
     ''' 
@@ -103,6 +119,7 @@ def divide_numbers(a: float, b: float) -> float:
     case return signed infinity that is the same sign as a
     Hint: np.sign() and np.inf will be useful
     '''
+    
     pass
 
 ##################################################
