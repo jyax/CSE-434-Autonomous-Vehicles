@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 import numpy as np
-import cv2 as cv
+#import cv2 as cv
 import os
 # Do not import any more packages than the above
 '''
@@ -30,20 +30,21 @@ def find_warning(message: str) -> str:
     If there is no "warning" substring, returns -1
     Hint: don't forget to use a "return" statement
     '''
-    
-    return message.lower.find("warning")
+    message = message.lower
+    return message.find("warning")
 
 def every_third(message: str) -> str:
     '''
     Returns every third letter in message starting with the second letter
     '''
-    new_message = ""
+    new_message = message[1]
     count = 0
-    for c in message:
+    for c in message[2:]:
         if count == 2:
             new_message+=c
             count = 0
-        count+=1
+        else:
+            count+=1
     return new_message
 
 def all_words(message: str) -> str:
@@ -51,7 +52,7 @@ def all_words(message: str) -> str:
     Breaks message up at each space (" ") and puts the substrings into a list in the same order
     (Don't worry about punctuation)
     '''
-    return message.split()[]
+    return message.split()
     
     
 def half_upper_case(message: str) -> str:
@@ -61,8 +62,8 @@ def half_upper_case(message: str) -> str:
         If there are an odd number of letters, round down, that is the first half will have one fewer letters
     '''
     message_new = message
-    message_new[0,int(len(message)/2)-1].upper
-    message_new[int(len(message)/2), len(message)-1].lower
+    message_new[0,int(len(message)/2)-1].upper()
+    message_new[int(len(message)/2), len(message)-1].lower()
     return message_new
 
 #############################
@@ -137,7 +138,8 @@ def make_all_lower( string_list: list ) -> list:
         returns: list of same strings but all in lower case
         Hint: list comprehension
     '''
-    pass
+    new_list = [string.lower for string in string_list]
+    return new_list
 
 def decrement_string(mystr: str) -> str:
     ''' Use a single line of Python code for this function (hint: list comprehension)
@@ -145,7 +147,7 @@ def decrement_string(mystr: str) -> str:
         Return a string each of whose characters has is one ASCII value lower than in mystr
         Hint: ord() returns ASCII value, chr() converts ASCII to character, join() combines elements of a list
     '''
-    pass
+    return [chr(ord(c)-1) for c in mystr]
 
 def list2dict( my_list: list ) -> dict:
     ''' 
@@ -216,7 +218,7 @@ class TailLights:
 
     def __init__(self, impath: str):
         self.impath = impath
-        self.img = cv.imread(impath)      
+#        self.img = cv.imread(impath)      
         if self.img is None:
             print('')
             print('*'*60)  # If we can't find the image, check impath
