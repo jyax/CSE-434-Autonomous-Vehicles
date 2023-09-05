@@ -30,8 +30,8 @@ def find_warning(message: str) -> str:
     If there is no "warning" substring, returns -1
     Hint: don't forget to use a "return" statement
     '''
-    message = message.lower
-    return message.find("warning")
+    message = message.lower()
+    return message.find('warning')
 
 def every_third(message: str) -> str:
     '''
@@ -61,10 +61,7 @@ def half_upper_case(message: str) -> str:
         of the letters are upper case and the rest lower case.  
         If there are an odd number of letters, round down, that is the first half will have one fewer letters
     '''
-    message_new = message
-    message_new[0,int(len(message)/2)-1].upper()
-    message_new[int(len(message)/2), len(message)-1].lower()
-    return message_new
+    return message[0:int(len(message)/2)].upper() + message[int(len(message)/2):len(message)].lower()
 
 #############################
 # Chapter 5: Numbers and Math
@@ -82,7 +79,7 @@ def exp_div_fun(a: int, b: int, c: int) -> int:
     '''
     Return the integer remainder you get when you multiply a times itself b times and then divide by c
     '''
-    return int(a**b / c)
+    return int((a**b) % c)
     
  
  #################################
@@ -97,7 +94,11 @@ def lcm(x: int, y: int) -> int:
     return testval
     Hint: % will be useful
     '''
-    pass               
+    m = x if x > y else y
+    test_val = m
+    while (test_val % x) != 0 and (test_val % y) != 0:
+        test_val += m
+    return test_val
 
 ##################################################
 # Chapter 8: Conditional Logic and Control Flow
@@ -107,11 +108,11 @@ def cond_cum_sum(a: int, b: int) -> int:
     Find the cumulative sum of numbers from 0 to a-1 that are not divisible by b
     Hint: % will be useful
     '''
-    cnt = 0
-    for num in range(0, a-1):
-        if num % b == 0:
-            cnt+= 1
-    return cnt
+    sum = 0
+    for num in range(0, a - 1):
+        if (num % b) != 0:
+            sum += num
+    return sum
 
 def divide_numbers(a: float, b: float) -> float:
     ''' 
@@ -120,7 +121,12 @@ def divide_numbers(a: float, b: float) -> float:
     case return signed infinity that is the same sign as a
     Hint: np.sign() and np.inf will be useful
     '''
-    
+    try:
+        ans = a / b
+        return ans
+    except ZeroDivisionError:
+        ans = np.sign(a) * np.inf
+        return ans
     pass
 
 ##################################################
@@ -130,7 +136,7 @@ def inc_list(a: int, b: int) -> list:
     '''
     Return a list of numbers that start at a and increment by 1 to b-1
     '''
-    pass
+    return [int(x) for x in range(a, b)]
 
 def make_all_lower( string_list: list ) -> list:
     ''' Use a single line of Python code for this function
@@ -138,8 +144,7 @@ def make_all_lower( string_list: list ) -> list:
         returns: list of same strings but all in lower case
         Hint: list comprehension
     '''
-    new_list = [string.lower for string in string_list]
-    return new_list
+    return [string.lower() for string in string_list]
 
 def decrement_string(mystr: str) -> str:
     ''' Use a single line of Python code for this function (hint: list comprehension)
@@ -147,20 +152,25 @@ def decrement_string(mystr: str) -> str:
         Return a string each of whose characters has is one ASCII value lower than in mystr
         Hint: ord() returns ASCII value, chr() converts ASCII to character, join() combines elements of a list
     '''
-    return [chr(ord(c)-1) for c in mystr]
+    return ''.join([(chr(ord(c)-1)) for c in mystr])
+
 
 def list2dict( my_list: list ) -> dict:
     ''' 
     Return a dictionary corresponding to my_list where the keys are elements of my_list
     and the values are the square of the key
     '''
-    pass
+    squares = {}
+    for x in my_list:
+        squares[x] = x**2
+    return squares
 
 def concat_tuples( tuple1: tuple, tuple2: tuple ) -> tuple:
     ''' 
     Return a tuple that concatenates tuple2 to the end of tuple1
     '''
-    pass
+    tuple1 += tuple2
+    return tuple1
 
 
 ##################################################
@@ -171,7 +181,8 @@ def matrix_multiplication(A: np.array,B: np.array) -> np.array:
     A, B: numpy arrays
     Return: matrix multiplication of A and B
     '''
-    pass
+
+    return np.dot(A, B)
 
 def largest_row(M: np.array) -> np.array:
     ''' 
@@ -179,7 +190,9 @@ def largest_row(M: np.array) -> np.array:
     Return: 1D numpy array corresponding to the row with the greatest sum in M
     Hint: use np.argmax
     '''
-    pass   
+    for row in M:
+        np.sum(row)
+
 
 def column_scale( A: np.array, vec: np.array) -> np.array:
     '''
