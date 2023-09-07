@@ -3,6 +3,9 @@
 import numpy as np
 #import cv2 as cv
 import os
+
+import scipy.spatial.transform
+
 # Do not import any more packages than the above
 '''
     La1 1 Assignment 
@@ -127,7 +130,6 @@ def divide_numbers(a: float, b: float) -> float:
     except ZeroDivisionError:
         ans = np.sign(a) * np.inf
         return ans
-    pass
 
 ##################################################
 # Chapter 9: Tuples, Lists and Dictionaries    
@@ -190,8 +192,15 @@ def largest_row(M: np.array) -> np.array:
     Return: 1D numpy array corresponding to the row with the greatest sum in M
     Hint: use np.argmax
     '''
+
+    A = np.empty(shape=(M.shape[0], 1))
+    row_num = 0
     for row in M:
-        np.sum(row)
+        sum = np.sum(row)
+        A[row_num] = sum
+        row_num += 1
+    ans = np.argmax(A)
+    return M[ans]
 
 
 def column_scale( A: np.array, vec: np.array) -> np.array:
@@ -201,7 +210,7 @@ def column_scale( A: np.array, vec: np.array) -> np.array:
     return [M x N] 2D array where the i'th column is the corresponding column of A * vec[i]
     Hint: use broadcasting to do this in a single line
     '''
-    pass
+    return A * vec[None, :]
 
 def row_add( A: np.array, vec: np.array) -> np.array:
     '''
@@ -210,7 +219,7 @@ def row_add( A: np.array, vec: np.array) -> np.array:
     return [M x N] 2D array where the i row is the corresponding row of A + vec[i]
     Hint: use broadcasting to do this in a single line
     '''
-    pass
+    return A + vec[:, None]
 
 ##################################################
 # Chapter 14: scipy  
@@ -221,7 +230,8 @@ def rotate_90_y(A: np.array) -> np.array:
     return: [Mx3] corresponding to points in A rotated by 90 degrees around Y axis
     Hint: use the scipy rotation operation
     '''
-    pass
+    rotation = scipy.spatial.transform.Rotation.from_euler('XYZ', [0, 90, 0], degrees=True)
+    return rotation.apply(A)
 
 
 ##################################################
