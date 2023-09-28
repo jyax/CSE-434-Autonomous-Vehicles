@@ -28,5 +28,5 @@ model.plot_all_points(test, fignum='Input_1', title='Test Data 1', block=False)
 scores = model.classify(test)
 
 # Plot classification results:
-model.plot_results(test, scores, fignum='Result_1', block=True)
+model.plot_results(test, scores, fignum='Result_1', block=True, filesave='./set_1.png')
 

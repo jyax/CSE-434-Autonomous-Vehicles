@@ -3,7 +3,6 @@
     Add extra channels to data with the goal of improving a linear classifier
 
 '''
-
 from labeled_data import LabeledData
 
 def add_rotated_vectors(measurements: LabeledData):
@@ -30,5 +29,11 @@ def add_rotated_vectors(measurements: LabeledData):
     measurements.add_data_channels( x + y )
     measurements.add_data_channels( -x + y )
 
+    return 0
+
+def multiply_rotated_vectors(measurements: LabeledData):
+    x = measurements.get_x()
+    y = measurements.get_y()
+    measurements.add_data_channels( -((x-2) * y))
     return measurements
 
