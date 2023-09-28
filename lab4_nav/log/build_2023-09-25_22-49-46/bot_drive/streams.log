@@ -1,0 +1,24 @@
+[2.463s] Invoking command in '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive': PS1=R:\w$ PYTHONPATH=/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive/prefix_override:/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive/build --no-deps install_data
+[2.958s] running develop
+[3.578s] running egg_info
+[3.581s] creating bot_drive.egg-info
+[3.619s] writing bot_drive.egg-info/PKG-INFO
+[3.692s] writing dependency_links to bot_drive.egg-info/dependency_links.txt
+[3.728s] writing entry points to bot_drive.egg-info/entry_points.txt
+[3.764s] writing requirements to bot_drive.egg-info/requires.txt
+[3.797s] writing top-level names to bot_drive.egg-info/top_level.txt
+[3.831s] writing manifest file 'bot_drive.egg-info/SOURCES.txt'
+[3.872s] reading manifest file 'bot_drive.egg-info/SOURCES.txt'
+[3.878s] writing manifest file 'bot_drive.egg-info/SOURCES.txt'
+[3.882s] running build_ext
+[3.883s] Creating /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/lib/python3.10/site-packages/bot-drive.egg-link (link to .)
+[3.919s] Installing circle_drive script to /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/lib/bot_drive
+[3.991s] 
+[3.993s] Installed /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive
+[3.993s] running install_data
+[3.994s] creating /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/ament_index
+[4.030s] creating /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/ament_index/resource_index
+[4.066s] creating /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/ament_index/resource_index/packages
+[4.112s] copying resource/bot_drive -> /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/ament_index/resource_index/packages
+[4.142s] copying package.xml -> /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/bot_drive
+[4.216s] Invoked command in '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive' returned '0': PS1=R:\w$ PYTHONPATH=/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive/prefix_override:/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive/build --no-deps install_data

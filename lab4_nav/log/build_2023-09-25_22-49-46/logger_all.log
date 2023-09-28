@@ -1,0 +1,113 @@
+[0.848s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install', '--packages-select', 'bot_drive']
+[0.850s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['bot_drive'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x2b9a5581e590>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x2b9a54f99ff0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x2b9a54f99ff0>>, mixin_verb=('build',))
+[1.142s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.143s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.145s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.145s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.145s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav'
+[1.146s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.148s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.149s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.150s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.150s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.152s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.178s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.179s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.180s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.180s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.181s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.182s] Level 1:colcon.colcon_core.package_identification:_identify(bot_drive) by extensions ['ignore', 'ignore_ament_install']
+[1.185s] Level 1:colcon.colcon_core.package_identification:_identify(bot_drive) by extension 'ignore'
+[1.198s] Level 1:colcon.colcon_core.package_identification:_identify(bot_drive) by extension 'ignore_ament_install'
+[1.199s] Level 1:colcon.colcon_core.package_identification:_identify(bot_drive) by extensions ['colcon_pkg']
+[1.199s] Level 1:colcon.colcon_core.package_identification:_identify(bot_drive) by extension 'colcon_pkg'
+[1.200s] Level 1:colcon.colcon_core.package_identification:_identify(bot_drive) by extensions ['colcon_meta']
+[1.200s] Level 1:colcon.colcon_core.package_identification:_identify(bot_drive) by extension 'colcon_meta'
+[1.200s] Level 1:colcon.colcon_core.package_identification:_identify(bot_drive) by extensions ['ros']
+[1.201s] Level 1:colcon.colcon_core.package_identification:_identify(bot_drive) by extension 'ros'
+[1.215s] DEBUG:colcon.colcon_core.package_identification:Package 'bot_drive' with type 'ros.ament_python' and name 'bot_drive'
+[1.216s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.216s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.217s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.217s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.218s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.218s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.220s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.221s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.221s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.222s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.223s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.223s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.224s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.225s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.275s] Level 5:colcon.colcon_core.verb:set package 'bot_drive' build argument 'cmake_args' from command line to 'None'
+[1.279s] Level 5:colcon.colcon_core.verb:set package 'bot_drive' build argument 'cmake_target' from command line to 'None'
+[1.280s] Level 5:colcon.colcon_core.verb:set package 'bot_drive' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.280s] Level 5:colcon.colcon_core.verb:set package 'bot_drive' build argument 'cmake_clean_cache' from command line to 'False'
+[1.281s] Level 5:colcon.colcon_core.verb:set package 'bot_drive' build argument 'cmake_clean_first' from command line to 'False'
+[1.282s] Level 5:colcon.colcon_core.verb:set package 'bot_drive' build argument 'cmake_force_configure' from command line to 'False'
+[1.282s] Level 5:colcon.colcon_core.verb:set package 'bot_drive' build argument 'ament_cmake_args' from command line to 'None'
+[1.283s] Level 5:colcon.colcon_core.verb:set package 'bot_drive' build argument 'catkin_cmake_args' from command line to 'None'
+[1.285s] Level 5:colcon.colcon_core.verb:set package 'bot_drive' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.286s] DEBUG:colcon.colcon_core.verb:Building package 'bot_drive' with the following arguments: {'ament_cmake_args': None, 'build_base': '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive', 'merge_install': False, 'path': '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/bot_drive', 'symlink_install': True, 'test_result_base': None}
+[1.288s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.300s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.301s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/bot_drive' with build type 'ament_python'
+[1.302s] Level 1:colcon.colcon_core.shell:create_environment_hook('bot_drive', 'ament_prefix_path')
+[1.312s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.314s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/bot_drive/hook/ament_prefix_path.ps1'
+[1.461s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/bot_drive/hook/ament_prefix_path.dsv'
+[1.503s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/bot_drive/hook/ament_prefix_path.sh'
+[1.542s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.543s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.272s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/bot_drive'
+[2.275s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.276s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.794s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive': PS1=R:\w$ PYTHONPATH=/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive/prefix_override:/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive/build --no-deps install_data
+[5.543s] Level 1:colcon.colcon_core.shell:create_environment_hook('bot_drive', 'pythonpath_develop')
+[5.546s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive/share/bot_drive/hook/pythonpath_develop.ps1'
+[5.548s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive' returned '0': PS1=R:\w$ PYTHONPATH=/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive/prefix_override:/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive/build --no-deps install_data
+[5.684s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive/share/bot_drive/hook/pythonpath_develop.dsv'
+[5.720s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive/share/bot_drive/hook/pythonpath_develop.sh'
+[5.764s] Level 1:colcon.colcon_core.environment:checking '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive' for CMake module files
+[5.768s] Level 1:colcon.colcon_core.environment:checking '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive' for CMake config files
+[5.783s] Level 1:colcon.colcon_core.environment:checking '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/lib'
+[5.784s] Level 1:colcon.colcon_core.environment:checking '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/bin'
+[5.785s] Level 1:colcon.colcon_core.environment:checking '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/lib/pkgconfig/bot_drive.pc'
+[5.786s] Level 1:colcon.colcon_core.environment:checking '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/lib/python3.10/site-packages'
+[5.789s] Level 1:colcon.colcon_core.shell:create_environment_hook('bot_drive', 'pythonpath')
+[5.792s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/bot_drive/hook/pythonpath.ps1'
+[6.053s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/bot_drive/hook/pythonpath.dsv'
+[6.091s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/bot_drive/hook/pythonpath.sh'
+[6.126s] Level 1:colcon.colcon_core.environment:checking '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/bin'
+[6.127s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bot_drive)
+[6.129s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/bot_drive/package.ps1'
+[6.167s] INFO:colcon.colcon_core.shell:Creating package descriptor '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/bot_drive/package.dsv'
+[6.208s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/bot_drive/package.sh'
+[6.244s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/bot_drive/package.bash'
+[6.278s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/bot_drive/package.zsh'
+[6.313s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/colcon-core/packages/bot_drive)
+[6.425s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[6.425s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[6.426s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[6.426s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[6.473s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[6.499s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[6.500s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[6.500s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[6.829s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[6.832s] INFO:colcon.colcon_core.shell:Creating prefix script '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/local_setup.ps1'
+[6.872s] INFO:colcon.colcon_core.shell:Creating prefix util module '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/_local_setup_util_ps1.py'
+[6.909s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/setup.ps1'
+[6.948s] INFO:colcon.colcon_core.shell:Creating prefix script '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/local_setup.sh'
+[6.984s] INFO:colcon.colcon_core.shell:Creating prefix util module '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/_local_setup_util_sh.py'
+[7.023s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/setup.sh'
+[7.064s] INFO:colcon.colcon_core.shell:Creating prefix script '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/local_setup.bash'
+[7.101s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/setup.bash'
+[7.141s] INFO:colcon.colcon_core.shell:Creating prefix script '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/local_setup.zsh'
+[7.177s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/setup.zsh'

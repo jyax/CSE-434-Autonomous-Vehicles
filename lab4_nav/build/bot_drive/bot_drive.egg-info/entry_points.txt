@@ -1,0 +1,3 @@
+[console_scripts]
+circle_drive = bot_drive.circle_drive:main
+

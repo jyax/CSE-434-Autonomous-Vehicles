@@ -1,0 +1,9 @@
+source;share/bot_drive/hook/pythonpath.ps1
+source;share/bot_drive/hook/pythonpath.dsv
+source;share/bot_drive/hook/pythonpath.sh
+source;share/bot_drive/hook/ament_prefix_path.ps1
+source;share/bot_drive/hook/ament_prefix_path.dsv
+source;share/bot_drive/hook/ament_prefix_path.sh
+source;../../build/bot_drive/share/bot_drive/hook/pythonpath_develop.ps1
+source;../../build/bot_drive/share/bot_drive/hook/pythonpath_develop.dsv
+source;../../build/bot_drive/share/bot_drive/hook/pythonpath_develop.sh

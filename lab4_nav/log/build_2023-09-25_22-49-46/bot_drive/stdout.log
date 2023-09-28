@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating bot_drive.egg-info
+writing bot_drive.egg-info/PKG-INFO
+writing dependency_links to bot_drive.egg-info/dependency_links.txt
+writing entry points to bot_drive.egg-info/entry_points.txt
+writing requirements to bot_drive.egg-info/requires.txt
+writing top-level names to bot_drive.egg-info/top_level.txt
+writing manifest file 'bot_drive.egg-info/SOURCES.txt'
+reading manifest file 'bot_drive.egg-info/SOURCES.txt'
+writing manifest file 'bot_drive.egg-info/SOURCES.txt'
+running build_ext
+Creating /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/lib/python3.10/site-packages/bot-drive.egg-link (link to .)
+Installing circle_drive script to /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/lib/bot_drive
+
+Installed /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/build/bot_drive
+running install_data
+creating /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/ament_index
+creating /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/ament_index/resource_index
+creating /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/ament_index/resource_index/packages
+copying resource/bot_drive -> /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/ament_index/resource_index/packages
+copying package.xml -> /mnt/home/yaxjacob/av/ros_ws/src/yaxjacob_av/lab4_nav/install/bot_drive/share/bot_drive
