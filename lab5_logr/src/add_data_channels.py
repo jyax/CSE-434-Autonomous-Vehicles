@@ -34,6 +34,6 @@ def add_rotated_vectors(measurements: LabeledData):
 def multiply_rotated_vectors(measurements: LabeledData):
     x = measurements.get_x()
     y = measurements.get_y()
-    measurements.add_data_channels( -((x-2) * y))
+    measurements.add_data_channels( -((2**x-2) * 2**y))
     return measurements
 
