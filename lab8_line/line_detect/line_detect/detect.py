@@ -4,8 +4,8 @@
     This is an exmple ROS node for subscribing to image topics and displaying images
     Can specify the image topic name as well as whether or not it is compressed
       Usage:
-    ros2 run image_fun image_display <'/camera/image_raw/compressed'> 
-    ros2 run image_fun image_display <'/camera/image_raw/compressed'> --compressed
+    ros2 run image_fun image_display <topic_name>
+    ros2 run image_fun image_display <topic_name> --compressed
 
     Use the optional --compressed argument if the image topic is type compressed
 
@@ -23,18 +23,19 @@ import numpy as np
 
 class ImageDisplay(Node):
     def __init__(self):
-        super().__init__('image_display')        
+        super().__init__('image_display')
+        topic = "camera/image_raw/compressed"
         self.compressed = compressed
         self.publisher_ = self.create_publisher(PointStamped, 'line_point', 10)
-        self.title = f'{'/camera/image_raw/compressed'}, type: compressed' if compressed else f'{'/camera/image_raw/compressed'}, type: raw'
+        self.title = f'{topic}, type: compressed' if compressed else f'{topic}, type: raw'
         self.bridge = CvBridge()
         self.get_logger().info(f'Subscribed to: {self.title}')
         if self.compressed:
-            self.subscription = self.create_subscription(CompressedImage, '/camera/image_raw/compressed', self.image_callback, 1)
+            self.subscription = self.create_subscription(CompressedImage, topic, self.image_callback, 1)
         else:
-            self.subscription = self.create_subscription(Image, '/camera/image_raw/compressed', self.image_callback, 1)
-        self.subscription 
-        
+            self.subscription = self.create_subscription(Image, topic, self.image_callback, 1)
+        self.subscription
+
     def image_callback( self, msg ):
         publish_msg = PointStamped()
         if self.compressed:
@@ -46,15 +47,15 @@ class ImageDisplay(Node):
         height, width, channels = img.shape
         crop_height = 5
         cropped_img = img[height - crop_height:,:]
-        
-        cvec = np.array([[ 0.12073938, 0.0637727, -0.21671088]]) 
+
+        cvec = np.array([[ 0.12073938, 0.0637727, -0.21671088]])
         intercept = 0.74563056
 
         score = (cropped_img.astype(float) * cvec).sum(axis=2) + intercept
         probt = expit(score)
         threshold = 0.5
 
-        binary_target = (probt > threshold).astype(np.uint8) 
+        binary_target = (probt > threshold).astype(np.uint8)
         cc = cv.connectedComponentsWithStats(binary_target)
 
         inds = np.argsort(cc[2][:,4]) # sort on number of pixels in each continguous region
@@ -67,7 +68,7 @@ class ImageDisplay(Node):
                 centroid = cc[3][i,:]
                 break
 
-        # add back offset 
+        # add back offset
         if np.any(centroid):
             center = (int(centroid[0]), int(centroid[1] + height - crop_height))
             publish_msg.point.x = centroid[0]
@@ -80,14 +81,14 @@ class ImageDisplay(Node):
 
         cv.imshow(self.title, img )
         if cv.waitKey(1) & 0xFF == ord('q'):
-            raise SystemExit  # If user pressed "q"           
+            raise SystemExit  # If user pressed "q"
 
 def main(args=None):
     rclpy.init(args=args)
 
-    node = ImageDisplay()  
+    node = ImageDisplay()
     try:
-        rclpy.spin(node)       
+        rclpy.spin(node)
     except SystemExit:
         node.destroy_node()
         rclpy.shutdown()
