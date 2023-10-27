@@ -20,7 +20,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'labeler = line_detect.labeler:main',
             'detect = line_detect.detect:main'
         ],
     },
