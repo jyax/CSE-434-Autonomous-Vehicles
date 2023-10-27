@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'detect = line_detect.detect:main'
+            'detect = line_detect.detect:main',
+            'ground_spot = line_detect.ground_spot:main'
         ],
     },
 )

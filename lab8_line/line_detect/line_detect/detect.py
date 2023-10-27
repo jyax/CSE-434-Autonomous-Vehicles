@@ -1,5 +1,5 @@
 '''
-    image_display.py 
+    detect.py 
 
     This is an exmple ROS node for subscribing to image topics and displaying images
     Can specify the image topic name as well as whether or not it is compressed
@@ -30,12 +30,12 @@ class ImageDisplay(Node):
         self.bridge = CvBridge()
         self.get_logger().info(f'Subscribed to: {self.title}')
         if self.compressed:
-            self.subscription = self.create_subscription(CompressedImage, topic_name, self.image_cb, 1)
+            self.subscription = self.create_subscription(CompressedImage, topic_name, self.image_callback, 1)
         else:
-            self.subscription = self.create_subscription(Image, topic_name, self.image_cb, 1)
+            self.subscription = self.create_subscription(Image, topic_name, self.image_callback, 1)
         self.subscription 
         
-    def image_cb( self, msg ):
+    def image_callback( self, msg ):
         publish_msg = PointStamped()
         if self.compressed:
             img = self.bridge.compressed_imgmsg_to_cv2(msg,'bgr8')
@@ -47,8 +47,8 @@ class ImageDisplay(Node):
         crop_height = 5
         cropped_img = img[height - crop_height:,:]
         
-        cvec = np.array([[ 0.16038173,  0.18115433, -0.37381468]]) 
-        intercept = 0.81807159
+        cvec = np.array([[ 0.12073938, 0.0637727, -0.21671088]]) 
+        intercept = 0.74563056
 
         score = (cropped_img.astype(float) * cvec).sum(axis=2) + intercept
         probt = expit(score)

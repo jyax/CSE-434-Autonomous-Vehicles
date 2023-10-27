@@ -111,21 +111,33 @@ class GroundSpot(Node):
         cam_point = np.array([unit_focal_point[0], unit_focal_point[1], 1.])
         
         # Next rotate cam_point to base_footprint coordinates using self.cam_rot:
-        pass 
+        cam_point = self.cam_rot.apply(cam_point)
         # Find intersection of this vector that starts at camera origin with the ground plane
         # Find the scale parameter using the height of camera: self.cam_tran.z, and nvec:
         # (note, don't name it 'lambda' as that is a Python command)
-        pass 
+        nvec = cam_point / np.linalg.norm(cam_point)
+        scaler = -self.cam_tran.z / nvec[2]
+        
         
         # Now find the ground point in base_footprint coordinates.  It should be of
         # type PointStamped, which contains a header (which should be set to out_header above.
         # Notice the frameid is 'base_footprint')
         # And it should contain a 3D point of type Point with the 3D coordinates
         # See math in the slide.
-        pass
+        ground_point_msg = PointStamped()
+        ground_point_msg.header = out_header
+
+        ground_point = Point()
+
+        current_point = t + (scaler*nvec)
+        ground_point.x = current_point[0]
+        ground_point.y = current_point[1]
+        ground_point.z = current_point[2]
+
+        ground_point_msg.point = ground_point
         
         # Publish the ground spot
-        pass
+        self.publisher.publish(ground_point_msg)
 
 
 def main(args=None):

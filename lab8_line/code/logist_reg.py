@@ -128,7 +128,11 @@ class LogisticReg:
         self.intercept = np.array(sk_logr.intercept_) # Extract intercept
 
     def print_params(self):
-        print('Logist Regression params, cvec:',self.cvec,'intercept:',self.intercept)
+        print('Logist Regression params, cvec:', self.cvec, 'intercept:', self.intercept)
+        with open("green_classifier.txt", "w") as file:
+            file.write(f"intercept: {self.intercept}\n")
+            file.write(f"cvec: {self.cvec}\n")
+
 
     def apply(self, img, mod_channels=False):
         ''' Application of trained logisitic regression to an image
@@ -220,21 +224,6 @@ if __name__ == '__main__':
 
     logr.fit_model_to_files( args.trainimg, args.trainmask, args.trainexmask, mod_channels=args.mod_channels )
 
-    print("Intercept: ", logr.intercept)
-    print("cvec: ", logr.cvec)
-
-    unit_vec = logr.cvec / np.linalg.norm(logr.cvec)
-
-    extra_vec = np.array([1.0,0.0, 0.0])
-
-    three_vec_ortho = unit_vec - np.dot(unit_vec, extra_vec) * extra_vec
-
-    print('3-vec ortho:', three_vec_ortho)
-
-    with open("green_classifier.txt", "w") as file:
-        file.write(f"intercept: {logr.intercept}\n")
-        file.write(f"cvec: {logr.cvec}\n")
-
     # Load test data:
     testimg = cv.imread(args.testimg)
     if args.testmask:
@@ -245,7 +234,8 @@ if __name__ == '__main__':
     # Apply model to test data:
     score = logr.apply( testimg, mod_channels=args.mod_channels )
     probt = logr.prob_target( score )
-    logr.print_params()
+    if not args.mod_channels:
+        logr.print_params()
     if testmask.size:
         # If we provide ground truth on test data, we can calculate the average precision:
         average_precision = average_precision_score(testmask.ravel()*255, score.ravel() )
