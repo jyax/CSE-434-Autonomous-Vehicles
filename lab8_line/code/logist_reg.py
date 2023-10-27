@@ -217,7 +217,23 @@ if __name__ == '__main__':
 
     # Build color model with Logistic Regression
     logr = LogisticReg( )
+
     logr.fit_model_to_files( args.trainimg, args.trainmask, args.trainexmask, mod_channels=args.mod_channels )
+
+    print("Intercept: ", logr.intercept)
+    print("cvec: ", logr.cvec)
+
+    unit_vec = logr.cvec / np.linalg.norm(logr.cvec)
+
+    extra_vec = np.array([1.0,0.0, 0.0])
+
+    three_vec_ortho = unit_vec - np.dot(unit_vec, extra_vec) * extra_vec
+
+    print('3-vec ortho:', three_vec_ortho)
+
+    with open("green_classifier.txt", "w") as file:
+        file.write(f"intercept: {logr.intercept}\n")
+        file.write(f"cvec: {logr.cvec}\n")
 
     # Load test data:
     testimg = cv.imread(args.testimg)
