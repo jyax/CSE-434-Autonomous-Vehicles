@@ -116,11 +116,10 @@ class GroundSpot(Node):
         # Find the scale parameter using the height of camera: self.cam_tran.z, and nvec:
         # (note, don't name it 'lambda' as that is a Python command)
         nvec = cam_point / np.linalg.norm(cam_point)
-        scaler = -self.cam_tran.z / nvec[2]
-        
-        
+        scale = self.cam_tran.z / nvec[2]
+        print(nvec)
         # Now find the ground point in base_footprint coordinates.  It should be of
-        # type PointStamped, which contains a header (which should be set to out_header above.
+        # type PointStamped, which contains a header (which should be set to isout_header above.
         # Notice the frameid is 'base_footprint')
         # And it should contain a 3D point of type Point with the 3D coordinates
         # See math in the slide.
@@ -129,12 +128,18 @@ class GroundSpot(Node):
 
         ground_point = Point()
 
-        current_point = t + (scaler*nvec)
+        current_point = [
+            self.cam_tran.x + (scale*nvec[0]),
+            self.cam_tran.y + (scale*nvec[1]),
+            self.cam_tran.z + (-scale*nvec[2])
+        ]
+
         ground_point.x = current_point[0]
         ground_point.y = current_point[1]
         ground_point.z = current_point[2]
 
         ground_point_msg.point = ground_point
+        
         
         # Publish the ground spot
         self.publisher.publish(ground_point_msg)
