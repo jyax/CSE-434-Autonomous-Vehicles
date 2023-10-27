@@ -4,8 +4,8 @@
     This is an exmple ROS node for subscribing to image topics and displaying images
     Can specify the image topic name as well as whether or not it is compressed
       Usage:
-    ros2 run image_fun image_display <topic_name> 
-    ros2 run image_fun image_display <topic_name> --compressed
+    ros2 run image_fun image_display <'/camera/image_raw/compressed'> 
+    ros2 run image_fun image_display <'/camera/image_raw/compressed'> --compressed
 
     Use the optional --compressed argument if the image topic is type compressed
 
@@ -22,17 +22,17 @@ from scipy.special import expit
 import numpy as np
 
 class ImageDisplay(Node):
-    def __init__(self, topic_name, compressed):
+    def __init__(self):
         super().__init__('image_display')        
         self.compressed = compressed
         self.publisher_ = self.create_publisher(PointStamped, 'line_point', 10)
-        self.title = f'{topic_name}, type: compressed' if compressed else f'{topic_name}, type: raw'
+        self.title = f'{'/camera/image_raw/compressed'}, type: compressed' if compressed else f'{'/camera/image_raw/compressed'}, type: raw'
         self.bridge = CvBridge()
         self.get_logger().info(f'Subscribed to: {self.title}')
         if self.compressed:
-            self.subscription = self.create_subscription(CompressedImage, topic_name, self.image_callback, 1)
+            self.subscription = self.create_subscription(CompressedImage, '/camera/image_raw/compressed', self.image_callback, 1)
         else:
-            self.subscription = self.create_subscription(Image, topic_name, self.image_callback, 1)
+            self.subscription = self.create_subscription(Image, '/camera/image_raw/compressed', self.image_callback, 1)
         self.subscription 
         
     def image_callback( self, msg ):
@@ -85,13 +85,7 @@ class ImageDisplay(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    parser = argparse.ArgumentParser(description='Image type arguments')
-    parser.add_argument('topic_name',      default="/image",     type=str, help="Image topic to subscribe to")
-    parser.add_argument('--compressed',    action='store_true',            help='Set if compressed image message')
-    args, unknown = parser.parse_known_args()
-    if unknown: print('Unknown args:',unknown)
-
-    node = ImageDisplay( topic_name=args.topic_name, compressed=args.compressed)  
+    node = ImageDisplay()  
     try:
         rclpy.spin(node)       
     except SystemExit:
