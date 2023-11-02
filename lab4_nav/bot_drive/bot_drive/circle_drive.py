@@ -34,6 +34,6 @@ def main(args=None):
     av = CircleDrive()  # Initialize Node
     motion = Twist( linear=Vector3(x=0.2), angular=Vector3(z=0.4))
     wait = 2*math.pi / motion.angular.z    # Time to complete a full circle: 2*pi/angular.z
-    av.drive(wait = wait, motion = motion )
+    av.drive(wait = wait, motion = motion)
 
 
