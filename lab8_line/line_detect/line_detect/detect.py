@@ -25,7 +25,7 @@ class ImageDisplay(Node):
     def __init__(self):
         super().__init__('image_display')
         topic = "camera/image_raw/compressed"
-        self.compressed = False
+        self.compressed = True
         self.publisher_ = self.create_publisher(PointStamped, 'line_point', 10)
         self.title = f'{topic}, type: compressed' if self.compressed else f'{topic}, type: raw'
         self.bridge = CvBridge()

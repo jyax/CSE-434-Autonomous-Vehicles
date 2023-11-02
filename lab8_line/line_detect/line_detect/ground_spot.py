@@ -130,7 +130,7 @@ class GroundSpot(Node):
 
         current_point = [
             self.cam_tran.x + (scale*nvec[0]),
-            self.cam_tran.y + (nvec[1]),
+            self.cam_tran.y + (scale*nvec[1]),
             self.cam_tran.z + (-scale*nvec[2])
         ]
 
