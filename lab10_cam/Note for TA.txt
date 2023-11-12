@@ -1,0 +1,3 @@
+Our turtlebot has been noted with having continuous sync issues.
+We have attempted each solution to try and fix as well as any
+solutions the professor has come up with and it still has not changed. It still does not want to sync up.
